@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Contacts</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css">
+    
+  </head>
+
+  <body>
+	  <div class="container">
+		  <h1 class="center-align">
+			  My Contacts
+		  </h1>
+		  <input type="text" id="filterInput" placeholder="Search names..">
+		  <ul id="names" class="collection with-header">
+             <li class="collection-header">
+                 <h5>A</h5>
+			 </li>
+			 <li class="collection-item">
+				 <a href="#">Alan</a>
+			 </li>
+			 <li class="collection-item">
+				<a href="#">Andjela</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Ana</a>
+			</li>
+			<li class="collection-item">
+				<a href="#">Aleksandar</a>
+			</li>
+
+			<li class="collection-header">
+				<h5>B</h5>
+			</li>
+			<li class="collection-item">
+				<a href="#">Beli2</a>
+			</li>
+			<li class="collection-item">
+			   <a href="#">Beli</a>
+		   </li>
+		   <li class="collection-item">
+			   <a href="#">Bojana</a>
+		   </li>
+		   <li class="collection-item">
+			   <a href="#">Beki</a>
+		   </li>
+
+
+		   <li class="collection-header">
+			<h5>C</h5>
+		</li>
+		<li class="collection-item">
+			<a href="#">Caca</a>
+		</li>
+		<li class="collection-item">
+		   <a href="#">Caty</a>
+	   </li>
+	   <li class="collection-item">
+		   <a href="#">Cole</a>
+	   </li>
+	   <li class="collection-item">
+		   <a href="#">Cari</a>
+	   </li>
+
+
+		  </ul>
+
+
+
+
+
+	  </div>
+  
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+
+
+		var filter = document.getElementById('filterInput')
+     
+	    filter.addEventListener('keyup', filtername)
+
+
+
+		function filtername(){
+			var filtervalue = document.getElementById('filterInput').value.toUpperCase()
+
+			var ul = document.getElementById('names')
+            var li = ul.querySelectorAll('li.collection-item')
+
+			for(var i = 0 ; i < li.length ; i++){
+
+				var a = li[i].getElementsByTagName('a')[0]
+				if(a.innerHTML.toUpperCase().indexOf(filtervalue) > -1){
+                      li[i].style.display = ''
+
+				}else{
+					li[i].style.display = 'none'
+
+				}
+			}
+
+		}
+
+		
+
+
+
+
+
+
+
+
+
+
+	</script>
+  </body>
+</html>
